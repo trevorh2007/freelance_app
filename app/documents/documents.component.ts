@@ -7,23 +7,25 @@ import { Document } from './document';
 	templateUrl: 'documents.component.html'
 })
 export class DocumentsComponent {
+	pageTitle: string = "Documents"
+
 	documents: Document[] = [
 		{
-			title: "Secret File 1",
+			title: "Secret File 1 - Confidential",
 			description: "Top level clearance needed",
 			file_url: 'http://www.google.com',
 			updated_at: 'just now',
 			image_url: 'http://www.google.com'
 		},
 		{
-			title: "Secret File 2",
+			title: "Secret File 2 - Confidential",
 			description: "Top level clearance needed",
 			file_url: 'http://www.google.com',
 			updated_at: 'just now',
 			image_url: 'http://www.google.com'
 		},
 		{
-			title: "Secret File 3",
+			title: "Secret File 3 - Confidential",
 			description: "Top level clearance needed",
 			file_url: 'http://www.google.com',
 			updated_at: 'just now',
