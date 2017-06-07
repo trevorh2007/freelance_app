@@ -23,7 +23,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRoutingModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
         ],
         declarations: [
             app_component_1.AppComponent,
