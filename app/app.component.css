@@ -26,3 +26,7 @@
 .dropdown-menu a:hover {
 	color: #252830;
 }
+
+.float-right {
+	float: right;
+}
