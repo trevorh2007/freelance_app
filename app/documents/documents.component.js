@@ -16,7 +16,7 @@ let DocumentsComponent = class DocumentsComponent {
                 description: "Top level clearance needed",
                 file_url: 'http://www.google.com',
                 updated_at: 'just now',
-                image_url: 'http://www.dmv.gov.za/img/documents.jpg'
+                image_url: 'http://printeger.eu/wp-content/uploads/2016/03/iStock_000028512836_Full_MIT-cOPYRIGHT.jpg'
             },
             {
                 title: "Secret File 2 - Confidential",

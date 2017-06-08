@@ -1,29 +1,35 @@
-<div class="container container-fluid">
+<div class="container">
 	<h1 class="white-text">{{ pageTitle }}</h1>
 
-	<div class="row">
-		<div class="card col-sm-4" *ngFor="let doc of documents">
-			<img class="card-img-top" src="{{ doc.image_url }}" alt="Card image cap" width="100%">
+		<div class="row">
+	<span *ngFor="let doc of documents">
+			<div class="clearfix col-12">
+				<div class="card">
 
-			<div class="card-block">
+					<img class="card-img" src="{{ doc.image_url }}" width="100%">
 
-				<h4 class="card-title">
-					{{ doc.title }}
-				</h4>
+					<div class="card-block">
 
-				<p class="card-text">
-					{{ doc.description }}
-				<p>
+						<h4 class="card-title">
+							{{ doc.title }}
+						</h4>
 
-				<div>
-					<a class="btn btn-lg btn-primary" href="{{ doc.file_url }}">Download File</a>
+						<p class="card-text">
+							{{ doc.description }}
+						<p>
+
+						<div>
+							<a class="btn btn-primary" href="{{ doc.file_url }}">Download File</a>
+						</div>
+
+						<p class="card-text">
+							<small class="text-muted">{{ doc.updated_at }}</small>
+						</p>
+
+					</div>
+
 				</div>
-
-				<p class="card-text">
-					<small class="text-muted">{{ doc.updated_at }}</small>
-				</p>
-
 			</div>
+	</span>
 		</div>
-	</div>
 </div>
