@@ -1,36 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { Document } from './document';
+import { DocumentService } from './document.service';
 
 @Component({
 	moduleId: module.id,
 	selector: 'documents',
 	templateUrl: 'documents.component.html',
-	styleUrls: ['documents.component.css']
+	styleUrls: ['documents.component.css'],
+	providers: [ DocumentService ]
 })
-export class DocumentsComponent {
+export class DocumentsComponent implements OnInit {
 	pageTitle: string = "Documents"
+	documents: Document[];
+	errorMessage: string;
+	mode = "Observable";
 
-	documents: Document[] = [
-		{
-			title: "Secret File 1 - Confidential",
-			description: "Top level clearance needed",
-			file_url: 'http://www.google.com',
-			updated_at: 'just now',
-			image_url: 'http://printeger.eu/wp-content/uploads/2016/03/iStock_000028512836_Full_MIT-cOPYRIGHT.jpg'
-		},
-		{
-			title: "Secret File 2 - Confidential",
-			description: "Top level clearance needed",
-			file_url: 'http://www.google.com',
-			updated_at: 'just now',
-			image_url: 'http://greenapplemortgage.com/wp-content/uploads/2015/12/Documents.jpg'
-		},
-		{
-			title: "Secret File 3 - Confidential",
-			description: "Top level clearance needed",
-			file_url: 'http://www.google.com',
-			updated_at: 'just now',
-			image_url: 'http://printeger.eu/wp-content/uploads/2016/03/iStock_000028512836_Full_MIT-cOPYRIGHT.jpg'
-		}
-	]
+	constructor(
+		private documentService: DocumentService;
+	) {}
+
+	ngOnInit() {
+		let timer = Observable.timer(0, 5000);
+		timer.subscribe(() => this.getDocuments())
+	}
+
+	getDocuments() {
+		this.documentService.getDocuments()
+				.subscribe(
+					documents => this.documents = documents,
+					error => this.errorMessage = <any>error
+					);
+	}
 }
